@@ -22,7 +22,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 oauth = OAuth()
 oauth.register(
     name = "google",
-    server_matadata_url = "https://accounts.google.com/.well-known/openid-configuration"
+    server_matadata_url = "https://accounts.google.com/.well-known/openid-configuration",
     client_id = CLIEN_ID,
     client_secret = CLIEN_SECRET,
     client_kwargs ={

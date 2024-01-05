@@ -7,11 +7,11 @@ from starlette.requests import Request
 
 
 
-home_router = APIRouter(prefix="/home", response_class = HTMLResponse)
+home_router = APIRouter(prefix="/home")
 
-template = Jinja2Templates(directory="/templates/home")
+template = Jinja2Templates(directory="templates/home")
 
-@home_router.get("/")
+@home_router.get("/", response_class = HTMLResponse)
 async def read_home(req: Request):
     return template.TemplateResponse(
         name="home.html",
